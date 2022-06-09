@@ -1,7 +1,7 @@
 function countAandB(input){
     var sum = 0;
     for(var i=0; i<input.length; i++){
-        if(input[i] == 'a' || input[i] == 'b'){
+        if(input[i] === 'a' || input[i] === 'b'){
             sum++;
         }
     }
