@@ -1,0 +1,237 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+
+*{
+    box-sizing: border-box;
+}
+
+.main-header{
+    border-bottom: 0.5px solid black;
+}
+
+ul, .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container{
+    width: 96%;
+    margin: 0 auto;
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Navigation ---- */
+
+.menu {
+    padding: 0;
+    margin: 0;
+}
+
+/* ---- Search Containers ---- */
+
+form {
+  color: #555;
+  display: flex;
+  padding: 2px;
+  border: 1px solid currentColor;
+  border-radius: 5px;
+  margin: 8px 0;
+}
+
+input[type="search"] {
+  border: none;
+  background: transparent;
+  margin: 0;
+  padding: 7px 8px;
+  font-size: 18px;
+  color: inherit;
+  border: 1px solid transparent;
+  border-radius: inherit;
+}
+
+input[type="search"]::placeholder {
+  color: 	#808080;
+}
+
+button[type="submit"] {
+  text-indent: -999px;
+  overflow: hidden;
+  width: 40px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+button[type="submit"]:hover {
+  opacity: 1;
+}
+
+button[type="submit"]:focus,
+input[type="search"]:focus {
+  box-shadow: 0 0 3px 0 #1183d6;
+  border-color: #1183d6;
+  outline: none;
+}
+
+form.nosubmit {
+ border: none;
+ padding: 0;
+}
+
+input.nosubmit {
+  border: 1px solid 	#F5F5F5;
+  width: 200px;
+  padding: 5px 4px 5px 40px;
+   background: 	#F5F5F5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+}
+
+
+/* ---- language Containers ---- */
+
+.input-language{
+    width:122px;
+    background-color: blue;
+}
+
+.input-setting{
+    width: 32px;
+    background-color: yellow;
+}
+
+.input-user{
+    width: 48px;
+    background-color: orange;
+}
+
+
+/* ---- Layout Containers ---- */
+
+
+
+
+
+/* ---- Page Elements ---- */
+
+.logo{
+    width: 185px;
+    margin: 8px 0;
+}
+
+ul li, a{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+a{
+    display: block;
+    color: black;
+    position: relative;
+    padding: 0 18px;
+}
+
+/* The hyperlink underline animation refers to https://css-irl.info/animating-underlines/ */
+li > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    width: 70%;
+    height: 0.2em;
+    background-color: black;
+    opacity: 0;
+    /* transition: opacity 300ms, transform 300ms; */
+  }
+  
+li > a:hover::after,
+  li > a:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 1em, 0);
+  }
+
+ul{
+    padding:0;
+}
+
+/* ------ dropdown container -----*/
+/* ------ ------------------ -----*/
+
+  /* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin: 0px 0 0 0 ;    /* Make the dropdown-content more under the nav menu.*/
+  }
+  
+  /* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Show the dropdown arrow ▼ */
+  .dropdown-arrow {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #333;
+    border-bottom: 6px solid transparent;
+    position: relative;
+    top: 13px;
+    left: 5px;
+  }
+
+  /* Show the dropdown arrow ▲ */
+.dropdown:hover .dropdown-arrow {
+    position: relative;
+    top: -10px;
+    left: 5px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 6px solid #333;
+    border-top: 6px solid transparent;
+  }
