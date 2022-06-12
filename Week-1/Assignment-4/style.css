@@ -20,6 +20,11 @@ ul, a {
     list-style-type: none;
 }
 
+p{
+    padding: 0;
+    margin: 0;
+}
+
 
 /* ================================= 
   Base Layout Styles
@@ -91,8 +96,9 @@ li > a:visited::after {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
+    font-size: 13px;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.2);
     z-index: 1;
     margin: 0px 0 0 0 ;    /* Make the dropdown-content more under the nav menu.*/
   }
@@ -101,7 +107,7 @@ li > a:visited::after {
 .dropdown-content a {
   float: none;
   color: rgb(0, 0, 0);
-  padding: 12px 16px;
+  padding: 0.8em 1.6em;
   text-decoration: none;
   display: block;
   text-align: left;
@@ -138,6 +144,45 @@ li > a:visited::after {
     border-bottom: 6px solid #555;
     border-top: 6px solid transparent;
 }
+
+/* Mega Menu*/
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 0;
+    /* background-color: #ccc; */
+    /* height: 250px; */
+}
+
+.column p {
+    padding: 0.8em 1.6em;
+    margin: 2em 0 0 0;
+    font-weight: 600;
+}
+  
+/* Style links inside the columns */
+.column a {
+    float: none;
+    color: black;
+    /* padding: 16px; */
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Add a background color on hover */
+.column a:hover {
+    color: rgb(0, 0, 0, 0.5);
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 
 /* -------------------  */
 /* Search Containers    */
