@@ -4,7 +4,7 @@
         <link href="style.css" rel="stylesheet">
         <link href="normalize.css" rel="stylesheet">
         <link href="media-queries.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+        <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/> -->
         <script src="https://kit.fontawesome.com/496bf6e27f.js" crossorigin="anonymous"></script> <!-- For search icon svg -->
     </head>
 
@@ -15,54 +15,89 @@
             <div class="container">
                 
                 <div class="logo">
-                    <img src="img\lockup.svg">
+                    <a href="./index.html"><img src="img\lockup.svg"></a>
                 </div>
                 
-                <div class="menu">
+                <div class="Menu-container">
                     <ul>
                         <li>
                             <div class="dropdown">
-                                <a href="#">Products<span class="dropdown-arrow"></spans></a>
+                                <a href="#Products">Products<span class="dropdown-arrow"></spans></a>
                                 <div class="dropdown-content">
                                     <a href="#">Link 1</a>
                                     <a href="#">Link 2</a>
                                     <a href="#">Link 3</a>
                                 </div>
+
+                                <!-- Android
+                                Chrome OS
+                                Cloud
+                                Firebase
+                                Flutter
+                                Google Assistant
+                                Google Workspace
+                                Maps Platform
+                                TensorFlow
+                                Web
+                                YouTube
+                                Firebase
+                                Google Ads
+                                Google Analytics
+                                Google Play
+                                Search
+                                Web Push and Notification APIs
+                                AdMob
+                                Google Ads API
+                                Google Pay
+                                Google Play Billing
+                                Interactive Media Ads -->
+
                             </div>
                         </li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">Learn</a></li>
-                        <li><a href="#">Developer Profile</a></li>
+                        <li><a href="#Events">Events</a></li>
+                        <li><a href="#Learn">Learn</a></li>
+                        <li><a href="#DeveloperProfile">Developer Profile</a></li>
                         <li>
                             <div class="dropdown">
                                 <a href="#">More<span class="dropdown-arrow"></spans></a>
                                 <div class="dropdown-content">
-                                    <a href="#">Developer Communities</a>
-                                    <a href="#">Blog</a>
+                                    <a href="#Communities">Developer Communities</a>
+                                    <a href="#Blog">Blog</a>
                                 </div>
                             </div>
                         </li>
                     </ul>
                 </div>
 
-                <div class="search-container">
-                    <!-- <form action="#">
-                      <i class="fa-solid fa-magnifying-glass"></i>
-                      <input type="text" placeholder="&#xF002; Search" name="search" style="font-family:Arial, FontAwesome" />
-                    </form> -->
-
+                <div class="Search-container">
                     <form class="nosubmit" action="#">
                         <input class="nosubmit" type="search" placeholder="Search">
                     </form>
                 </div>
 
-                <div class="input-language">222</div>
+                <div class="Language-container">
+                    <select>
+                      <option value="0">Language</option>
+                      <option value="1">English</option>
+                      <option value="2">Bahasa Indonesia</option>
+                      <option value="3">Deutsch</option>
+                      <option value="4">Español</option>
+                      <option value="5">Français</option>
+                      <option value="6">Português – Brasil</option>
+                      <option value="7">Русский</option>
+                      <option value="8">中文– 簡體</option>
+                      <option value="9">日本語</option>
+                      <option value="10">한국어</option>
+                    </select>
+                  </div>
 
-                <div class="input-setting">333</div>
-
-                <div class="input-user">444</div>
+                <div class="Sign_in-container">
+                    <button class="btn sign-in"><a href="#">Sign in</a></button>
+                </div>
 
             </div>
+        
+            <script src="app.js"></script>
         </header>
 
         <div class="main-content">
