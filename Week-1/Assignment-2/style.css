@@ -63,12 +63,14 @@ p{
 }
 
 /* ---- Layout Containers ---- */
-.main-content, .row1{
+.main-content, .course-content, .row{
     text-align: center;
 }
 
 .welcome{
+    width: 100%;
     padding: 0 10px;
+    background-color: rgb(225, 225, 225);
 }
 
 .rowTitle{
@@ -78,12 +80,7 @@ p{
     text-align: center;
 }
 
-.row1{
-    width: 100%;
-    background-color: rgb(225, 225, 225);
-}
-
-.row2{
+.main-content{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -99,10 +96,6 @@ p{
     padding: 1em;
     margin: 0 30px 20px 30px;
     max-width: 1200px;          /* HW requirement: Total width of content boxes should be fixed in 1200px when screen width > 1200px. */
-}
-
-.row3{
-    text-align: center;
 }
 
 .main-footer{
@@ -135,4 +128,4 @@ p{
 .button:hover {
     background-color: #555555;
     color: white;
-  }
+}
