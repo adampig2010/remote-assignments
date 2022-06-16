@@ -1,6 +1,6 @@
 function count(input) {
     
-    // declare the object
+    // declare the object of letter: count
     var letterCount = {};
     for(var i = 0; i < input.length; i++){
         var letter = input[i];
@@ -24,11 +24,10 @@ console.log(count(input1));       // should print {a:3, b:1, c:2, x:1}
 
 function groupByKey(input) {
     
-    // the count of the input objects
-    const len = input.length;
+    // declare the object of letter: value
     var gBK_count = {};
     
-    for( var i = 0; i < len; i++){
+    for( var i = 0; i < input.length; i++){
         var letter = input[i].key;
         var letterNum = input[i].value;
     

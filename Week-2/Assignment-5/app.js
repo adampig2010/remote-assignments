@@ -1,4 +1,6 @@
 function binarySearchPosition(numbers, target) {
+    
+    // initialize the low, high, mid
     let low = 0;
     let high = numbers.length - 1;
     let mid = 0;
@@ -25,4 +27,4 @@ function binarySearchPosition(numbers, target) {
 
 console.log(binarySearchPosition([1, 2, 5, 6, 7], 1)); // should print 0
 console.log(binarySearchPosition([1, 2, 5, 6, 7], 6)); // should print 3
-console.log(binarySearchPosition([1, 2, 5, 6, 7], 8)); // should print -1 ( I added the condition excluding the question requirement. )
+console.log(binarySearchPosition([1, 2, 5, 6, 7], 8)); // should print -1 ( I added the condition for the target not in the numbers array excluding the question requirement. )
