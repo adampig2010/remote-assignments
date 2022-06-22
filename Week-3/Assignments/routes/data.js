@@ -14,6 +14,8 @@ router.get('/', (req, res) => {
         res.send(`The result of 1+2+...+${num} => ${sum}`);
     }
 
+    // (Optional) Think about what will happen when N is very large?
+    // 若N超過2083位數，會超過URL長度上限，造成最後計算錯誤。
 })
 
 module.exports = router;
