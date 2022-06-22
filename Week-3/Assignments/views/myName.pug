@@ -1,0 +1,19 @@
+doctype html 
+html(lang="en")
+    head 
+        title showCookieName 
+    body 
+        header
+            h1 Show Cookie Name  
+        block content 
+            section#content
+                if username
+                    p username: #{username}
+                else
+                    form(action='/trackName', method='get')
+                        label Please enter your name:
+                            input(type="text", name="name") 
+                            button(type='submit') submit
+                    
+        footer
+            p &copy;2022 Mr. Muscle MC

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width= device-width, initial-scale=1.0">
+        <title>Sum</title>
+    </head>
+
+    <body>
+        <h1>The result of 1+2+...+N :</h1>
+        <p id="result"></p>
+        <input id="inputNum" type="text" placeholder="10"></input>
+        <button type="button" onclick="loadDoc()">Sum</button>
+
+        <script>
+            function loadDoc() {
+            
+              var inputNum = document.getElementById("inputNum").value;
+
+              var xhr = new XMLHttpRequest();
+              xhr.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  document.getElementById("result").innerHTML = this.responseText;
+                }
+              };
+              xhr.open("GET", `http://localhost:3000/data?number=${inputNum}`, true);
+              // Request to /data to calculate the result and response the answer
+              xhr.send();
+            }
+        </script>
+
+        <footer class="main-footer">
+            <span>&copy;2022 Mr. Muscle MC</span>
+        </footer>
+
+    </body>
+</html>
