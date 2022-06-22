@@ -1,6 +1,8 @@
-// time complexity: O()
-// space complexity: O()
-
+// Method 1: 
+// Time complexity: O(n) 
+// The whole array elements needs to traverse only once.
+// Space complexity: O(n)
+// Array has been used to store the ele2 candidates.
 
 function twoSum(nums, target) {
     var ele1 = 0;
