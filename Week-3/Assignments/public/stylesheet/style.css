@@ -1,0 +1,75 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.6;
+	margin: 0;
+}
+
+p, span {
+    margin: 0;
+    padding: 1em;
+}
+
+span {
+    font-size: 0.8em;
+}
+
+/* ================================= 
+    Base Layout Styles
+==================================== */
+
+/* ---- Layout Containers ---- */
+header {
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+
+footer {
+    background-color: rgb(200, 200, 200);
+    padding: 0.5em 0;
+    text-align: center;
+}
+
+form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 1em;
+}
+
+/* ================================= 
+    Elements Styles
+==================================== */
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 0.5em 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    background-color:#4CAF50;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0.5em;
+    font-size: 1.2em;
+    border: none;
+}
+
+button:hover {
+    background-color: #45a049;
+    color: white;
+}

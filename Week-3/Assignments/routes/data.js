@@ -3,19 +3,25 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
 
-    const num = req.query.number
-    if( num === undefined )
-        res.send("Lack of Parameter");
-
-    if( isNaN(num) )
-        res.send("Wrong Parameter");
+    const num = req.query.number;
+    var result = ""
+    if(num === undefined){                             // localhost:3000/data
+        result = "Lack of Parameter";
+    }
     else{
-        var sum = ( 1 + +num ) * +num / 2
-        res.send(`The result of 1+2+...+${num} => ${sum}`);
+        if(isNaN(num) || num === ""){                  // localhost:3000/data?number=xyz ||
+            result = "Wrong Parameter";                // localhost:3000/data?number=
+        }
+        else{                                         
+            var sum = ( 1 + +num ) * +num / 2;
+            var OptionalAns = `※(Optional) Think about what will happen when N is very large?
+                                可能會超過URL長度上限(如IE的上限為2083位數)，造成最後計算錯誤。`;
+            result = `The result of 1+2+...+${num} => ${sum}`;
+        }
     }
 
-    // (Optional) Think about what will happen when N is very large?
-    // 若N超過2083位數，會超過URL長度上限，造成最後計算錯誤。
-})
+    res.render('data', {result, OptionalAns, pageTitle: "Calculate Number Sum"});
+
+});
 
 module.exports = router;
