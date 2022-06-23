@@ -2,14 +2,15 @@
 <html>
     <head>
         <meta name="viewport" content="width= device-width, initial-scale=1.0">
+        <link rel='stylesheet', href='/stylesheet/style.css'>
         <title>Sum</title>
     </head>
 
     <body>
-        <h1>The result of 1+2+...+N :</h1>
-        <p id="result"></p>
-        <input id="inputNum" type="text" placeholder="10"></input>
-        <button type="button" onclick="loadDoc()">Sum</button>
+        <p id="title">The result of 1+2+...+N :</p>
+        <p id="result" style="display: none;"></p>
+        <input id="inputNum" type="text" placeholder="5 or 10 or 15 ..."></input>
+        <button type="button" class="button" onclick="loadDoc()">Sum</button>
 
         <script>
             function loadDoc() {
@@ -19,17 +20,26 @@
               var xhr = new XMLHttpRequest();
               xhr.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
+
+                  // [Needed to Refactor] Try to parse the responseText
+                  // I can't parse the responseText into only the result of sum
+                  // responseText is html text (because i render the data.pug)
+                  document.querySelector("#title").style.display = "none";
+                  document.querySelector("#inputNum").style.display = "none";
+                  document.querySelector(".button").style.display = "none";
+                  document.querySelector(".footer").style.display = "none";
                   document.getElementById("result").innerHTML = this.responseText;
+                  document.getElementById("result").style.display = "inline";
                 }
               };
-              xhr.open("GET", `http://localhost:3000/data?number=${inputNum}`, true);
               // Request to /data to calculate the result and response the answer
+              xhr.open("GET", `http://localhost:3000/data?number=${inputNum}`, true);
               xhr.send();
             }
         </script>
 
-        <footer class="main-footer">
-            <span>&copy;2022 Mr. Muscle MC</span>
+        <footer class="footer">
+            &copy;2022 Mr. Muscle MC
         </footer>
 
     </body>

@@ -7,7 +7,7 @@ router.use(bodyParser.urlencoded({ extended: false }));
 router.use(cookieParser());
 
 router.get('/', (req, res) => {
-    res.render('data', {result, pageTitle: "Calculate Number Sum"});
+    res.render('myName', {username: req.cookies.username, pageTitle: "Show Cookie Username"})
 });
 
 module.exports = router;
