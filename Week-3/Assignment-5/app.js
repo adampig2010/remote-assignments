@@ -1,4 +1,3 @@
-// Method 1: 
 // Time complexity: O(n) 
 // The whole array elements needs to traverse only once.
 // Space complexity: O(n)
