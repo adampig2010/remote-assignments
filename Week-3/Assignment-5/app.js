@@ -1,26 +1,24 @@
-// Time complexity: O(n) 
-// The whole array elements needs to traverse only once.
+// Time complexity: O(n)
+// one for loop O(n) and lookup the key in hashtable O(1) => O(n+1) => O(n)
 // Space complexity: O(n)
-// Array has been used to store the ele2 candidates.
+// hashtable has been used to store the ele2 candidates.
 
 function twoSum(nums, target) {
-    var ele1 = 0;
-    var ele2 = 0;
-    let tempArr = [];               // To store the candidate of ele2
-    var i2 = 0;
+    let ele1 = 0;
+    let ele2 = 0;
+    let hashtable = {};               // To store the candidate of ele2
     
-    for(let i1 = 0; i1 < nums.length; i1++){
+    for(let i1 in nums){
         ele1 = nums[i1];
         ele2 = target - ele1;
-        i2 = tempArr.indexOf(ele1);
         
-        if(i2 !== -1)                  
-            return [i2, i1]
-            // Why i2 first:
-            // the elements stored in the tempArr is before the current i1 
+        if(hashtable[ele2])               
+            return [hashtable[ele2], i1];
+            // Why the index of ele2 first:
+            // the elements stored in the hashtable is before the current i1 
         else
-            tempArr.push(ele2);    
-            // If cannot find the ele2, add to the tempArr 
+            hashtable[ele1] = i1;    
+            // If cannot find the ele2, add this value to hashtable 
             // for the next ele1's candidate of ele2
     }
 }
