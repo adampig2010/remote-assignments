@@ -4,13 +4,20 @@
     font-family: sans-serif;
 }
 
-.body-content {
+.body-content, .member-content {
     height: 100%;
     width: 100%;
-    background-image: linear-gradient( rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(../img/muscle_background.png);  
     background-position: center;
     background-size: cover;
     position: absolute;
+}
+
+.body-content {
+    background-image: linear-gradient( rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(../img/home_bg.png);  
+}
+
+.member-content {
+    background-image: linear-gradient( rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(../img/member_bg.jpg);  
 }
 
 .form-box{

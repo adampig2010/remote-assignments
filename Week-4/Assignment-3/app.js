@@ -6,10 +6,8 @@ app.use(express.static('public'));
 
 const mainRoutes = require('./routes');
 const memberRoutes = require('./routes/member');
-const dbRoutes = require('./routes/db');
 
 app.use('/', mainRoutes);
-// app.use('/db', dbRoutes);
 app.use('/member', memberRoutes);
 
 app.listen(3000, () => {
