@@ -32,11 +32,16 @@ db.connect( (err) => {
 
 // lookup the post data(email) in database
 router.post('/', urlencodedParser, (req, res) => {
-    let sql = `SELECT * FROM usrInfo WHERE email = '${req.body.userEmail}'`;
+    
+    let message = "";
+    let sql = `SELECT * FROM usrInfo WHERE email = '${req.body.user_email}' 
+                AND password = '${req.body.user_password}'`;
+    
     let query = db.query(sql, (err, result) => {
         if(err) throw err;
         if(result[0]){
-            res.render('member', { user_email: result[0].email });
+            //res.render('member', { user_email: result[0].email });
+            message = "query sucess!";
         }
         else{
             // const redirect_index = function (req, res, next) {
@@ -46,16 +51,22 @@ router.post('/', urlencodedParser, (req, res) => {
 
             // router.use(redirect_index);
             
-            let system_Notification = `No ${req.body.userEmail} user, please sign up!`
-            res.redirect('/');
-            res.render('index', {system_Notification});
-        }
-        // console.log(result[0]["email"]);
-        // 
-
-        
+            // let system_Notification = `No ${req.body.userEmail} user, please sign up!`
+            // res.redirect('/');
+            // res.render('home', {system_Notification});
+            message = "query failed!";
+        }        
     });
-    //   res.redirect('/member');
+    console.log(message);
+    res.send("aaa");
+    // next(message);
 });
+
+// router.get('/member', (req, res) => {
+//     res.render('member', { user_email: message});
+
+// })
+
+
     
 module.exports = router;

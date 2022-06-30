@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Homepage</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <div class="body-content">
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                    <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                </div>
+                <div class="social-icons">
+                    <img src="../img/fb.png">
+                    <img src="../img/tw.png">
+                    <img src="../img/gp.png">
+                </div>
+                <form id="login" class="input-group" action="/member" method="POST">
+                    <input type="email" class="input-field" name="user_email" placeholder="Enter your email" required>
+                    <input type="password" class="input-field" name="user_password" placeholder="Enter your password" required>
+                    <!-- <input type="checkbox" class="check-box"><span>Remember Password</span> -->
+                    <button type="submit" class="submit-btn">Log in</button>
+                </form>
+                <form id="register" class="input-group" action="/member" method="POST">
+                    <input type="email" class="input-field" name="register_email" placeholder="user email" required>
+                    <input type="password" class="input-field" name="register_password" placeholder="user password" required>
+                    <!-- <input type="checkbox" class="check-box"><span>I agree to the <a href="#">terms</a> & <a href="#">conditions</a></span> -->
+                    <button type="submit" class="submit-btn">Register</button>
+                </form>
+                <span id="notification">
+                    <% if (flag === "re-login") { %>
+                        <%= "You got the wrong email or password. Please retype!" %>
+                    <% } %>
+                    <% if (flag === "re-register") { %>
+                        <%= "The email has been registered. Please change the email and retype!" %>
+                    <% } %>
+                </span>
+            </div>
+        </div>
+
+        <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+
+            function register() {
+                x.style.left = "-400px";
+                y.style.left = "50px";
+                z.style.left = "110px";
+                document.getElementById("notification").remove();
+            }
+
+            function login() {
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0";
+                document.getElementById("notification").remove();
+            }
+
+        </script>
+
+    </body>
+
+
+</html>
