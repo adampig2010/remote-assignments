@@ -1,68 +1,51 @@
 const express = require("express");
-const mysql = require("mysql");
 const router = express.Router();
+const db = require('./db');
 const bodyParser = require("body-parser");
-
-// create application/x-www-form-urlencoded parser
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
-
-//create connection
-const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "123456",
-    database: "assignment"
-})
-
-//connect
-db.connect( (err) => {
-    if(err) throw err;
-    console.log("Mysql connected!");
-})
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 // lookup the post data(email) in database
 router.post('/', urlencodedParser, (req, res) => {
-    
-    let sql = "";
 
+    // signin page
     if(req.body.user_email){
-      sql = `SELECT * FROM user WHERE email = '${req.body.user_email}' 
-            AND password = '${req.body.user_password}'`;
+      let sql = `SELECT * FROM user WHERE email = '${req.body.user_email}' 
+              AND password = '${req.body.user_password}'`;
 
-      let query = db.query(sql, (err, result) => {
+      // query the email and password
+      db.query(sql, (err, query_result) => {
         if(err) throw err;
         
-        if(result[0]){
-          res.render('member', { message: `Welcome! ${result[0].email}`});
-        }
-        else{
+        // if   V to member page
+        // else X to re-login
+        if(query_result[0])
+          res.render('member', { message: `Welcome! <b><u>${req.body.user_email}</b></u>`});
+        else
           res.redirect('/home/re-login');
-        }
       });
     }
     
     if(req.body.register_email){
-      sql = `SELECT * FROM user WHERE email = '${req.body.register_email}'`;
+        let sql = `SELECT * FROM user WHERE email = '${req.body.register_email}'`;
 
-      let query = db.query(sql, (err, result) => {
-        if(err) throw err;
-        
-        if(!result[0]){
-            let usr = {email: req.body.register_email, password: req.body.register_password};
-            sql = `INSERT INTO user SET ?`;
-            db.query(sql, usr, (err, result) => {
-              if(err) throw err;
-              res.render('member', { message: `Welcome! ${req.body.register_email}`});
-            });
-        }
-        else{
-          res.redirect('/home/re-register');
-        }
-      });
+        // Only query the email
+        db.query(sql, (err, query_result) => {
+          if(err) throw err;
+          
+          // if   V to member page
+          // else X to re-register
+          if(!query_result[0]){
+              let usr = {email: req.body.register_email, password: req.body.register_password};
+              sql = `INSERT INTO user SET ?`;
+              db.query(sql, usr, (err, query_result) => {
+                  if(err) throw err;
+                  res.render('member', { message: `Welcome! <b><u>${req.body.register_email}</u></b>`});
+              });
+          }
+          else
+            res.redirect('/home/re-register');
+        });
     }
 });
 
 module.exports = router;
-
-// CREATE DATABASE assignment;
-// CREATE TABLE assignment.user(id INT AUTO_INCREMENT, email VARCHAR(255), password VARCHAR(255), PRIMARY KEY(id));
