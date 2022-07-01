@@ -1,9 +1,22 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
 * {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
 }
 
+span{
+    color: #777;
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+}
+
+/* ================================= 
+    Base Layout Styles
+==================================== */
 .body-content, .member-content {
     height: 100%;
     width: 100%;
@@ -39,15 +52,6 @@
     border-radius: 30px;
 }
 
-.toggle-btn {
-    padding: 10px 30px;
-    cursor: pointer;
-    background: transparent;
-    border: 0;
-    outline: none;
-    position: relative;
-}
-
 #btn {
     top: 0;
     left: 0;
@@ -62,6 +66,25 @@
 .social-icons, .member-icons{
     margin: 30px auto;
     text-align: center;
+}
+
+.input-group{
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+
+/* ================================= 
+    Elements Styles
+==================================== */
+.toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
 }
 
 .social-icons img{
@@ -79,13 +102,6 @@
     border-radius: 50%;
 }
 
-.input-group{
-    top: 180px;
-    position: absolute;
-    width: 280px;
-    transition: .5s;
-}
-
 .input-field {
     width: 100%;
     padding: 10px 0;
@@ -98,6 +114,10 @@
     background: transparent;
 }
 
+.check-box{
+    margin: 30px 10px 30px 0;
+}
+
 .submit-btn{
     width: 85%;
     padding: 10px 30px;
@@ -108,17 +128,6 @@
     border: 0;
     outline: none;
     border-radius: 30px;
-}
-
-.check-box{
-    margin: 30px 10px 30px 0;
-}
-
-span{
-    color: #777;
-    font-size: 12px;
-    bottom: 68px;
-    position: absolute;
 }
 
 #login {

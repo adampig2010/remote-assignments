@@ -1,16 +1,19 @@
-// use for the login & register's page animation 
-const x = document.getElementById("login");
-const y = document.getElementById("register");
-const z = document.getElementById("btn");
+// Use for the login & register's page check and animation function
+const form_login = document.getElementById("login");
+const form_register = document.getElementById("register");
+const btn_top = document.getElementById("btn");
 const input_emails = document.querySelectorAll('[type="email"]');
 const input_pws = document.querySelectorAll('[type="password"]');
 const toggle_pws = document.querySelectorAll("#toggle-password");
 const register_pw = document.querySelector('[name="register_password"]');
 const confirm_pw = document.querySelector('[name="register_confirmpw"]');
 const body = document.querySelector('body');
+const warning = document.getElementById("warning");
+const register_btn = document.getElementById("register-btn");
+const notification = document.getElementById("notification");
 
-// make all input field null when change page
-// [Need to fixed] toggle can't reset
+// Make all input field null when change page
+// [Need to fixed] toggle password can't reset
 function reset(){
     [...input_emails].map( input => input.value = "" );
     [...input_pws].map( input => input.value = "" );
@@ -18,40 +21,32 @@ function reset(){
     document.getElementById("notification").innerHTML = "";
 }
 
-// make login page shift
-function go_login_page() {
-    x.style.left = "50px";
-    y.style.left = "450px";
-    z.style.left = "0";
+// Use for login/register page position parameter
+function go_page(page){
+    
+    let [x, y, z] = ["", "", ""];
+    if(page === "login")                        // login
+        [x, y, z] = ["50px", "450px", "0"];
+    else                                        // register
+        [x, y, z] = ["-400px", "50px", "110"];
+
+    [form_login.style.left, form_register.style.left, btn_top.style.left] = 
+    [x, y, z];
 }
 
-// make register page shift
-function go_register_page() {
-    x.style.left = "-400px";
-    y.style.left = "50px";
-    z.style.left = "110px";
-}
-
-// Click the login button
-function login() {
-    go_login_page();
-    reset();
-}
-
-// Click the register button
-function register() {
-    go_register_page();
+// Use for topbutton login/register click response
+function btn_top_click(btn){
+    go_page(btn);
     reset();
 }
 
 // Use for /home/re-register start at register page
 function check_page(){
-    const notification = document.getElementById("notification");
     const register_word = "The email has been registered. Please change the email and retype!";
     if(notification.innerHTML.trim() === register_word.trim()) 
-        go_register_page();
+        go_page("register");
     else
-        go_login_page();
+        go_page("login");
 }
 
 check_page();
@@ -61,12 +56,12 @@ body.addEventListener('keyup', (e) => {
 
     if( e.target === register_pw || e.target === confirm_pw ){
         if( confirm_pw.value !== register_pw.value && confirm_pw.value){
-            document.getElementById("warning").innerHTML = "Your confirm password is different from password!";
-            document.getElementById("register-btn").disabled = true;
+            warning.innerHTML = "Your confirm password is different from password!";
+            register_btn.disabled = true;
         }
         else{
-            document.getElementById("warning").innerHTML = "";
-            document.getElementById("register-btn").disabled = false;
+            warning.innerHTML = "";
+            register_btn.disabled = false;
         }
     }
 });

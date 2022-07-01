@@ -32,7 +32,7 @@ function render(data) {
     table.id = "products";
      
     // Create th element
-    var tr = table.insertRow(-1);   // to insert from the end to make the first data in the top
+    var tr = table.insertRow(-1);   // Insert from the end to make the first data in the top
     for (var i = 0; i < th_cols.length; i++) {
         var th = document.createElement("th");
         th.innerHTML = th_cols[i];

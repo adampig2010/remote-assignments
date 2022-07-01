@@ -5,7 +5,7 @@ app.set("view engine", "pug");
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.render("index", {pageTitle: "Use the ajax to retrive the JSON data"});
+    res.render("index", {pageTitle: "Use the ajax to retrieve the JSON data"});
 });
 
 app.listen(3000, () => console.log("Server started on port 3000!"));
