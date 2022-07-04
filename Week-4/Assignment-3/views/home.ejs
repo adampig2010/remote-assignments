@@ -17,7 +17,7 @@
                     <img src="../img/tw.png">
                     <img src="../img/gp.png">
                 </div>
-                <form id="login" class="input-group" action="/member" method="POST">
+                <form id="login" class="input-group" action="/login" method="POST">
                     <input type="email" class="input-field" name="user_email" placeholder="Email" required>
                     <input type="password" class="input-field" name="user_password" placeholder="Password"
                             required>
@@ -25,7 +25,7 @@
                     <!-- <input type="checkbox" class="check-box"><span>Remember Password</span> -->
                     <button type="submit" class="submit-btn" id="login-btn">Log in</button>
                 </form>
-                <form id="register" class="input-group" action="/member" method="POST">
+                <form id="register" class="input-group" action="/register" method="POST">
                     <input type="email" class="input-field" name="register_email" placeholder="Email" required>
                     <input type="password" class="input-field" name="register_password" placeholder="Password" required>
                     <i class="bi bi-eye-slash" id="toggle-password"></i>
@@ -40,6 +40,9 @@
                     <% } %>
                     <% if (flag === "re-register") { %>
                         <%= "The email has been registered. Please change the email and retype!" %>
+                    <% } %>
+                    <% if (flag === "log-out") { %>
+                        <%= "You are logged out! Re-enter email and password to log in again!" %>
                     <% } %>
                 </span>
             </div>
