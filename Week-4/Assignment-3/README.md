@@ -15,8 +15,7 @@ PW = "your_mysql_passord"
 
 ### 3. Import the assignment.sql to your mysql database:
 ```
-mysql -u your_username -p assignmens < assignments.sql
-
+mysql -u your_username -p assignment < assignment.sql
 ```
 ### 4. Run the app.js:
 ```js
