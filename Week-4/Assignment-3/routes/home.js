@@ -3,11 +3,11 @@ const router = express.Router();
 
 function auth(req, res, next) {
   if (req.session.user) {
-    console.log('authenticated')
+    // console.log('authenticated')
     return res.redirect('/member');
   } 
   else {
-    console.log('not authenticated');
+    // console.log('not authenticated');
     next();
   }
 }

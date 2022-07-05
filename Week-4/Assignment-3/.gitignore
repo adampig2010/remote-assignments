@@ -1,2 +1,5 @@
 # ignore all files in any directory named noed_modules
 node_modules/
+
+# ignore .env
+*.env
